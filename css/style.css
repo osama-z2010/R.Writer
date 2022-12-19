@@ -1,0 +1,807 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+
+/* Start Global Rules */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Cairo", sans-serif;
+}
+
+.container {
+	padding: 0 15px;
+	margin: auto auto;
+}
+
+/* Small */
+
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+
+/* Medium */
+
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+
+/* Large */
+
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+:root {
+	--main-color: #FC6E20;
+	--secondary-color: #1787e0;
+	--main-transition: 0.3s;
+	--main-padding-top: 100px;
+	--main-padding-bottom: 100px;
+	--white-color: white;
+	--transparent-color: transparent;
+	--padding-section: 40px;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.main-title {
+	font-size: 40px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0 auto 25px;
+	position: relative;
+	width: fit-content;
+}
+
+.main-title::before,
+.main-title::after {
+	content: "";
+	position: absolute;
+	height: 5px;
+	background-color: var(--main-color);
+	border-radius: 10px;
+}
+
+.main-title::before {
+	width: 60%;
+	right: 0;
+	bottom: -10px;
+}
+
+.main-title::after {
+	width: 20%;
+	left: 0;
+	bottom: -10px;
+}
+
+
+.main-title:hover::before {
+	width: 20%;
+}
+
+.main-title:hover::after {
+	width: 60%;
+}
+
+.title-paragraph {
+	font-size: 16px;
+	text-transform: capitalize;
+	text-align: center;
+	margin: 0 auto 80px;
+	position: relative;
+	width: fit-content;
+}
+
+/* End Global Rules */
+
+/* Statr Header */
+header {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+header .container::after {
+	content: "";
+	position: absolute;
+	height: 1px;
+	background-color: #a2a2a2;
+	bottom: 0;
+	width: calc(100% - 30px);
+	left: 15px;
+}
+
+header nav {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+header .logo {
+	text-transform: uppercase;
+	font-size: 25px;
+	color: var(--white-color);
+	font-family: "Lucida Handwriting";
+}
+
+header nav ul {
+	display: flex;
+}
+
+header ul li a {
+	padding: 25px 15px;
+	display: block;
+	color: var(--white-color);
+	font-size: 16px;
+	position: relative;
+	z-index: 2;
+}
+
+header ul li a:hover {
+	color: var(--main-color);
+	border-bottom: 1px solid var(--main-color);
+}
+
+/* End Header */
+
+/* Statr Landing */
+.landing {
+	min-height: 100vh;
+	background-image: url(../images/landing.jpg);
+	background-size: cover;
+	background-color: #000000;
+	position: relative;
+}
+
+.landing .overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0 0 0 / 50%);
+}
+
+.landing .text {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 50px;
+	width: 75%;
+	display: flex;
+	justify-content: flex-end;
+	text-align: center;
+}
+
+.landing .text .content {
+	max-width: 600px;
+}
+
+@media (max-width: 991px) {
+	.landing .text {
+		width: 85%;
+	}
+
+	.landing .text .content {
+		max-width: 500px;
+	}
+}
+
+.landing .text h1 {
+	color: var(--main-color);
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.landing .text p {
+	color: white;
+	line-height: 1.7;
+	text-align: justify;
+}
+
+/* End Landing */
+
+/* Statr About */
+.about {
+	min-height: 100vh;
+	padding-top: var(--padding-section);
+	padding-bottom: var(--padding-section);
+}
+
+.about .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 100px;
+}
+
+@media (max-width: 991px) {
+	.about .container {
+		flex-direction: column;
+	}
+}
+
+.about .image {
+	position: relative;
+	margin-left: 120px;
+}
+
+.about .image::before {
+	content: "";
+	position: absolute;
+	background-color: transparent;
+	width: 316px;
+	height: 475px;
+	top: -40px;
+	left: -75px;
+	z-index: -1;
+	border: 5px solid var(--main-color);
+}
+
+.about .image img {
+	height: 475px;
+}
+
+@media (max-width: 991px) {
+	.about .text {
+		text-align: center;
+	}
+}
+
+.about .text p:nth-child(1) {
+	font-size: 25px;
+	font-weight: bold;
+	color: black;
+}
+
+.about .text p:nth-child(2) {
+	font-size: 30px;
+	font-weight: bold;
+	color: var(--main-color);
+}
+
+.about .text p:nth-child(3) {
+	font-size: 20px;
+	color: black;
+}
+
+.about .but {
+	padding: 20px;
+	background-color: var(--main-color);
+	display: flex;
+	justify-content: space-between;
+	width: 160px;
+	text-align: center;
+}
+
+.about .but a {
+	color: var(--white-color);
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.about .but i {
+	color: var(--white-color);
+	margin-top: 5px;
+}
+
+/* End About */
+
+/* Statr Services */
+.services {
+	min-height: 100vh;
+	padding: var(--padding-section);
+}
+
+.services .container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 40px;
+}
+
+.services .box {
+	position: relative;
+	background-color: rgb(204 204 204 / 7%);
+}
+
+.services .box::after {
+	position: absolute;
+	content: '';
+	right: 0;
+	top: 0;
+}
+
+.services .box:hover::after {
+	transition-duration: 1s;
+	border-bottom: 50px solid black;
+	border-right: 50px solid white;
+}
+
+.services .box .box-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid rgb(0 0 0 / 17%);
+	width: fit-content;
+	margin: 10px auto;
+}
+
+.services .box .box-title i {
+	margin-right: 20px;
+}
+
+.services .box .box-title h3 {
+	color: var(--main-color);
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.services .box p {
+	padding: 30px 30px;
+	text-align: justify;
+	line-height: 1.7;
+}
+
+/* End Services */
+
+/* Statr Statistics */
+.statistics {
+	background-image: url(../images/statistics.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+	position: relative;
+	min-height: 300px;
+}
+
+@media (max-width: 991px) {
+	.statistics {
+		min-height: 100vh;
+	}
+}
+
+@media (max-width: 767px) {
+
+	.statistics {
+		min-height: 190vh;
+	}
+}
+
+.statistics .overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0 0 0 / 80%);
+}
+
+.statistics .container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 40px;
+}
+
+.statistics .box {
+	margin-top: 80px;
+	text-align: center;
+	position: relative;
+}
+
+.statistics .box i {
+	background-color: var(--white-color);
+	padding: 15px;
+	border-radius: 5px;
+	font-size: 25px;
+
+}
+
+.statistics .box i:hover {
+	color: var(--main-color);
+}
+
+.statistics .number {
+	display: block;
+	font-size: 50px;
+	font-weight: bold;
+	color: var(--main-color);
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.statistics .text {
+	color: var(--white-color);
+}
+
+/* End Statistics */
+
+/* Statr Prising */
+.prising {
+	padding-top: var(--padding-section);
+}
+
+.prising .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 767px) {
+	.prising .container {
+		flex-direction: column;
+	}
+}
+
+.prising .box {
+	border: 1px solid var(--main-color);
+	text-align: center;
+	width: fit-content;
+	box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+}
+
+.prising .basic {
+	border: none;
+}
+
+@media (max-width: 767px) {
+	.prising .basic {
+		margin-top: 50px;
+	}
+}
+
+.prising .box .info {
+	margin-bottom: 40px;
+}
+
+.prising .box .info h3 {
+	font-weight: 400;
+	padding-top: 20px;
+}
+
+.prising .box .info span {
+	display: block;
+	font-size: 40px;
+	font-weight: bold;
+	padding-bottom: 50px;
+}
+
+.prising .box .info a {
+	padding: 5px 25px;
+	background-color: #1B1B1B;
+	text-align: center;
+	color: var(--white-color);
+	font-weight: bold;
+}
+
+.prising ul {
+	padding: 50px;
+	text-align: left;
+}
+
+
+.prising ul li {
+	padding: 15px;
+	position: relative;
+	color: black;
+}
+
+.prising ul li::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f111";
+	font-size: 10px;
+	font-weight: 900;
+	margin-right: 20px;
+	position: relative;
+	top: -1px;
+}
+
+.prising ul li:not(:last-child)::after {
+	content: "";
+	width: 100%;
+	height: 1px;
+	background-color: #707070;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0;
+}
+
+.prising .create-but {
+	display: block;
+	padding: 20px;
+	background-color: var(--main-color);
+	width: fit-content;
+	color: var(--white-color);
+	margin: 50px auto;
+}
+
+/* End Prising */
+
+/* Statr Testimonials */
+.testimonials {
+	background-image: url(../images/testimonials.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+	position: relative;
+	min-height: 500px;
+}
+
+.testimonials .overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0 0 0 / 50%);
+}
+
+.testimonials .container {
+	position: relative;
+}
+
+.testimonials .box {
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 100px;
+	padding: 60px;
+	margin-top: 50px;
+	position: absolute;
+}
+
+.testimonials .black-box {
+	z-index: 2;
+	top: -15px;
+	left: 0;
+	background-color: #1B1B1B;
+}
+
+.testimonials .white-box {
+	z-index: 1;
+	top: -30px;
+	left: -15px;
+	background-color: var(--white-color);
+}
+
+.testimonials .box .image {
+	position: relative;
+}
+
+.testimonials .box .image img {
+	max-width: 100%;
+}
+
+.testimonials .box .image::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: -10px;
+	width: 100%;
+	height: 5px;
+	background-color: var(--main-color);
+}
+
+.testimonials .box .image::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	width: 100%;
+	height: 5px;
+	background-color: var(--main-color);
+}
+
+.testimonials .box .text {
+	position: relative;
+}
+
+.testimonials .box .text i {
+	font-size: 30px;
+	color: rgb(2 2 2 / 15%);
+}
+
+.testimonials .box .text p:nth-child(1) {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.testimonials .box .text p:nth-child(3) {
+	font-size: 16px;
+	line-height: 1.7;
+	width: 85%;
+}
+
+.testimonials .box .text i:nth-child(4) {
+	position: absolute;
+	right: 125px;
+	bottom: -15px;
+}
+
+.testimonials .box .bullets {
+	position: absolute;
+	display: flex;
+	right: 20px;
+	bottom: 20px;
+	cursor: pointer;
+}
+
+.testimonials .bullets li {
+	width: 15px;
+	height: 15px;
+	background-color: #323232;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+
+.testimonials .bullets li.active {
+	background-color: var(--main-color);
+}
+
+/* End Testimonials */
+
+/* Statr Contact Us */
+.contact {
+	padding: var(--padding-section);
+}
+
+.contact .container {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+}
+
+.contact .form {
+	flex-basis: 50%;
+}
+
+@media (max-width: 991px) {
+	.contact .form {
+		flex-basis: 100%;
+	}
+}
+
+.contact .form .input {
+	padding: 20px;
+	display: block;
+	box-shadow: 0 12px 20px 0 rgb(0 0 0 / 0%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+	margin-bottom: 30px;
+	width: 100%;
+	border: none;
+	margin-top: 20px;
+	caret-color: var(--main-color);
+}
+
+.contact .form form textarea.input {
+	height: 200px;
+}
+
+.contact .form form .input:focus {
+	outline: none;
+}
+
+.contact .form form input[type="submit"] {
+	padding: 20px;
+	width: 100%;
+	border: none;
+	background-color: var(--main-color);
+	color: var(--white-color);
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.contact .image {
+	flex-basis: 50%;
+	text-align: center;
+}
+
+.contact .image img {
+	max-width: 100%;
+	height: 580px;
+}
+
+@media (max-width: 991px) {
+	.contact .image {
+		display: none;
+	}
+
+	.contact .image img {
+		display: none;
+	}
+}
+
+/* End Contact Us */
+
+/* Statr Footer */
+.footer {
+	background-color: #1B1B1B;
+	min-height: 200px;
+	text-align: center;
+}
+
+.footer .logo {
+	padding: 50px 50px 20px 50px;
+	display: block;
+	color: var(--white-color);
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: bold;
+	width: fit-content;
+	margin: 0 auto;
+	border-bottom: 1px solid var(--main-color);
+	font-family: "Lucida Handwriting";
+}
+
+.footer .social {
+	padding: 30px;
+	font-size: 25px;
+	color: var(--white-color);
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.footer .social i.facebook:hover {
+	color: #1877f2;
+}
+
+.footer .social i.twitter:hover {
+	color: #1da1f2;
+}
+
+.footer .social i.linkedin:hover {
+	color: #0077b5;
+}
+
+.footer .social i.youtube:hover {
+	color: #ff0000;
+}
+
+.footer .copyright-tag {
+	padding: 30px;
+	color: var(--white-color);
+	font-size: 16px;
+}
+
+.footer .copyright-tag span {
+	color: var(--main-color);
+}
+
+/* End Footer */
+
+/* Start Animation*/
+
+
+/* End Animation*/
